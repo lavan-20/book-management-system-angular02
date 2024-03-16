@@ -1,0 +1,15 @@
+<div class="card mb-2">
+    <div class="card-header text-center"><h3>Add Book to the collection</h3></div>
+    <div class="card-body">
+        <input class="form-control mb-2" [(ngModel)]="newBookTitle" type="text" placeholder="Enter Book Title">
+        <input class="form-control mb-2" [(ngModel)]="newBookAuthor" type="text" placeholder="Enter Author Name">
+        <button type="submit" (click)="onAddBook()" class="btn btn-primary">Add Book</button>
+    </div>
+</div>
+<div class="text-center mb-3"><h3>Book Collection</h3></div>
+<ul class="list-group">
+    <li class="list-group-item d-flex" *ngFor="let book of allBooks; index as i">
+        <span class = "p-2 flex-grow-1">"{{book.title}}" by {{book.author}}</span>
+        <button (click)="onDeleteBook(i)" class="btn btn-danger p-2">Delete Book</button>
+    </li>
+</ul>
